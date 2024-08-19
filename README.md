@@ -101,7 +101,7 @@ This code was only tested on Windows, so I don't know if it will have some troub
 
 - Responsivness. All the implementation is done thinking on all the devices, so the page is responsive for all of them.
 - Personalized video Player done from scratch using ShadCDN components and TailwindCSS. Implemented the Full-Screen, the Picture-In-Picture Mode, the volume and speed selections.
-- Dropzone done from scratch, you can upload videos by clicking on it or just simply dragging the elements inside and dropping them there.
+- Dropzone done from scratch, you can upload videos by clicking on it or just simply dragging the elements inside and dropping them there. as it is also implemented as streaming upload, it contains a upload progress bar.
 - Video Title, when uploading the new video in `/upload`, you have the option to add a video title, otherwise it will stay like "Video with no title".
 - The video cards, to represent the videos, firstly their thumbnails will be loaded, and then if you hover on them, the videos itself will be displayed, like in youtube.
 
@@ -125,4 +125,9 @@ npm install next@rc react@rc react-dom@rc
 - [Zod](https://zod.dev/): Schema validation
 - [browser-thumbnail-generator](https://www.npmjs.com/package/browser-thumbnail-generator): For the video Thumbnails generation.
 - [React Icons](https://react-icons.github.io/react-icons/): For all the icons used in the app
+
+# SCREENSHOTS
+![Main page with all videos](https://github.com/SrVladyslav/video_player_poc/blob/main/public/imagine_this_is_s3/mainData.png)
+![Upload section](https://github.com/SrVladyslav/video_player_poc/blob/main/public/imagine_this_is_s3/upload.png)
+![Video Watch section](https://github.com/SrVladyslav/video_player_poc/blob/main/public/imagine_this_is_s3/watch.png)
 
