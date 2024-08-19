@@ -4,17 +4,15 @@
 
 ```bash
 git clone https://github.com/SrVladyslav/video_player_poc.git
-
-cd video_player_poc
 ```
 
-2. Go inside the cloned root level directory and install the dependencies:
+2. Go inside the cloned root level directory:
 
 ```bash
 cd video_player_poc
 ```
 
-We should use `--force` because we are using the new NextJS-15 verions, which is not stable yet.
+Install the dependencies. We should use `--force` because we are using the new NextJS-15 verions, which is not stable yet.
 
 ```bash
 npm install --force
@@ -35,11 +33,22 @@ or just open the terminal in the root directory and run this script
 npm run create-env
 ```
 
-4. Migrating the DB, we will be using Prisma with SQLite, so let's migrate the schema and populate the DB with two random users:
+4. Migrating the DB, we will be using Prisma with SQLite, so let's migrate the schema and populate the DB with two random users, copy this and hit enter:
 
 ```bash
 npm run setup:db
 ```
+
+You will be prompted with something like `? Enter a name for the new migration: `, just name it like `dev` and go on. 
+
+HOLD ON, DO NOT CLOSE THE TERMINAL!
+
+Nice, the two users `user1` and `user2` are now created and we are one step from testing with them the Likes and Watch counter functionallities.
+
+5. Last step, copy the user1 and user2 `id` into the `.env.local` file in their respective variables `NEXT_PUBLIC_USER_ID_1="<user_id_1>"` and `NEXT_PUBLIC_USER_ID_2="<user_id_2>"`.
+
+This will be representing the user tokens, so we can mimic a little bit the user DB connections.
+
 
 # Start the DEV Server
 
@@ -52,6 +61,7 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 # IMPORTANT
+1) This code is not ready yet for production, first of all, all the video and image data is stored in local public folder. THIS IS BAD, but here we are just with POC. Before production, please, change all the uploads from `public` folder to some CDN or sprecialized server, consider AWS S3.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
