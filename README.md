@@ -71,27 +71,39 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+# UPS
+
+This code was only tested on Windows, so I don't know if it will have some troubles in Linux or MacOS. 
+
 # FUNCTIONALITIES
 
-1) Video GET Endpoints (using TRPC):
+### 1) Video GET Endpoints (using TRPC):
 
 - getVideo(vid: string, userID?:string): returns the wanted video, if the user is presented, returns also if `User Liked`the video or not. Used in `/watch` section to load the video data.
 - getVideos(): Returns all the uploaded videos. TODO: implement batching. Used in the main `/` section to load all the video, it's also used in one of the playlist sections from `/watch`.
 - getFavoriteVideos(userId:string): returns all the videos that the user with userId liked. Used in the main `/favorites` section to load all the user favorite videos, it's also used in one of the playlist sections from `/watch`.
 - getMyVideos(userId:string): Returns all the videos that the current user uploaded to the server. Used in the main `/my_videos` section to load all the videos uploaded by the user, it's also used in one of the playlist sections from `/watch`.
 
-2) Video CREATE Endpoints (using TRPC):
+### 2) Video CREATE Endpoints (using TRPC):
 
 - createVideo(...): Given the video data, without File, creates new video object in the DB. Used in `/upload` section to create/publish new Video Item.
 
-3) Video UPDATE Endpoints (using TRPC):
+### 3) Video UPDATE Endpoints (using TRPC):
     
 - incrementWatchCount(videoId:string): Given the video ID, increments its `watchCount` by one. Used in the `/watch` section to increment the video Watch counter
 - likeVideo(videoId: string, userId: string): Likes the video, creates a new relation between the video and the user, this relations are used to obtain the `likesCount`. Also uses Server Actions to be started.  Used in the `/watch` section to increment the video Likes counter if user clicks the Like button.
 
-4) Video POST API (Without TRPC)
+### 4) Video POST API (Without TRPC)
 
 - We also have the `/api/upload` route to handle uploading both the video file and the video thumbnail. For small items, it might be fine to use TRPC; however, TRPC is not designed to handle file data efficiently. The best practice is to upload the data to a dedicated server or a CDN, which is powerful and can process data quickly without bottlenecks. Then the URL/URI for this data will be passed to the TRPC to store it into the actual DB. The File uploading implementation is also done by streming, so one step forward to some prod implementation.
+
+### Extra functionalities
+
+- Responsivness. All the implementation is done thinking on all the devices, so the page is responsive for all of them.
+- Personalized video Player done from scratch using ShadCDN components and TailwindCSS. Implemented the Full-Screen, the Picture-In-Picture Mode, the volume and speed selections.
+- Dropzone done from scratch, you can upload videos by clicking on it or just simply dragging the elements inside and dropping them there.
+- Video Title, when uploading the new video in `/upload`, you have the option to add a video title, otherwise it will stay like "Video with no title".
+- The video cards, to represent the videos, firstly their thumbnails will be loaded, and then if you hover on them, the videos itself will be displayed, like in youtube.
 
 # IMPORTANT
 
