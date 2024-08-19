@@ -16,11 +16,11 @@ type UserStore = {
 }
 
 export const useUserData = create<UserStore>((set) => ({
-  userToken: 'clzzni4o20000ds83bcfhne4p',
+  userToken: process.env.NEXT_PUBLIC_USER_ID_1,
   userData: {
     username: 'user1',
     email: 'user1@email.com',
-    profile_picture: '/imagine_this_is_s3/user1.avif'
+    profile_picture: ''
   },
   setUserToken: (newToken: string) => set({ userToken: newToken }),
   setUserData: (newData: UserData) => set({ userData: newData }),
@@ -30,7 +30,7 @@ export const useUserData = create<UserStore>((set) => ({
       email: 'user1@email.com',
       profile_picture: '/imagine_this_is_s3/user1.avif'
     },
-    userToken: 'clzzni4o20000ds83bcfhne4p'
+    userToken: process.env.NEXT_PUBLIC_USER_ID_1
   }),
   setUser2: () => set({ 
     userData: {
@@ -38,6 +38,6 @@ export const useUserData = create<UserStore>((set) => ({
       email: 'user2@email.com',
       profile_picture: '/imagine_this_is_s3/user2.webp'
     },
-    userToken: 'clzzni4o90001ds837zz9badz'
+    userToken: process.env.NEXT_PUBLIC_USER_ID_2
   }),
 }))

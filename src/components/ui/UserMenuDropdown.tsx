@@ -33,7 +33,7 @@ const UserMenuDropdown =()=>{
     const { setUser1, setUser2 } = useUserData()
     const changeUser =(user:string)=> {
         if(user === 'user1'){
-            setUser1()
+            setUser1() 
         }else{
             setUser2()
         }
