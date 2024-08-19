@@ -10,7 +10,7 @@ const VideoList =({
     isSideList?: boolean,
 })=>{
     // return <div className='relative flex w-full h-full flex-row justify-center gap-3 flex-wrap'>
-    return <div className={`relative w-full h-full justify-center gap-3 grid 
+    return <div className={`relative w-full h-fit justify-center gap-3 grid 
         grid-cols-1 sm:grid-cols-2 ${isSideList ? 'lg:grid-cols-1': 'lg:grid-cols-3'}`}>
         {videos && videos.map((video:VideoListItem, index)=>{
             return <VideoLink 
