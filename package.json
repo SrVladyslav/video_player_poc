@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "setup:db": "prisma migrate dev && prisma generate && npm run seed",
-    "seed": "node prisma/seed.js"
+    "seed": "node prisma/seed.js",
+    "create-env": "node ./scripts/create-env.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
