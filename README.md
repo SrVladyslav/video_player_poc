@@ -47,7 +47,7 @@ Two users `user1` and `user2` are now created and we are one step from testing w
 
 ### 5. Last step 😊!
 
-![Image example](imagen.jpg)
+![Image example](https://github.com/SrVladyslav/video_player_poc/blob/main/public/imagine_this_is_s3/users.png)
 
 Copy the user1 and user2 `id` into the `.env.local` file in their respective variables `NEXT_PUBLIC_USER_ID_1="<user_id_1>"` and `NEXT_PUBLIC_USER_ID_2="<user_id_2>"`.
 
