@@ -119,7 +119,7 @@ This code was only tested on Windows, so I don't know if it will have any issues
 2) TODO: Due to lack of time, the video player timeline only partially completed.
 
 # Technologies Used
-- [NextJS 15 Release Candidate](https://nextjs.org/docs): should work with Nextjs14 also.
+- [NextJS 15 Release Candidate](https://nextjs.org/docs): Should work with a Nextjs14 as well.
 ```bash
 npm install next@rc react@rc react-dom@rc
 ```
